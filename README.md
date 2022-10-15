@@ -8,11 +8,11 @@
 
 ### Ссылки
 - [Макет (Figma)](https://www.figma.com/file/aemqWXDpQZkKgc3cV3DDL0/Chat_mkhananov?node-id=0%3A1)
-- [Приложение (Netlify)](https://cool-cupcake-f486be.netlify.app/)
+- [Приложение (хостинг)](http://chat.mkhananov.ru/)
 
 ### Скрипты запуска
 
 - `yarn` - установка/обновление зависимостей
-- `yarn start` - запуск проекта на 3000 порту
-- `parcel` - запуск проекта на 1234 порту
-- `parcel build` - сборка
+- `yarn start` или `npm run start` - запуск проекта на 3000 порту (Express)
+- `yarn wds` - запуск проекта на 1234 порту (Parcel)
+- `yarn build` - сборка проекта

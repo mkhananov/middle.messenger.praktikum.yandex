@@ -1,6 +1,6 @@
 export default `
     <div class="login-page">
-        <form class="container" action="<%-action %>">
+        <form class="container">
             <span class="header"><%-header %></span>
             <div class="fields">
                 <% fields.map(({ label, type, name }) => { %>
@@ -16,6 +16,8 @@ export default `
                     <a  href='/<%-link %>'><%-label %></a>
                 <% } else if (type === "button") { %> 
                     <button><%-label %></button>
+                <% } else if (type === "page") { %> 
+                    <input name="page" hidden value="<%-link %>"/>
                 <% }}); %>
             </div>
         </form>

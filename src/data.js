@@ -8,30 +8,30 @@ import send from "./../static/icons/send.svg";
 import arrow from "../static/icons/arrow.svg";
 import photo from "../static/icons/photo.svg";
 
-const url_login = "";
-const url_chat = "chat";
-const url_profile = "profile";
-const url_register = "register";
-const url_profileEdit = "profile?edit";
-const url_password = "password";
-const url_404 = "404";
-const url_505 = "505";
+const page_login = "login";
+const page_chat = "chat";
+const page_profile = "profile";
+const page_register = "register";
+const page_password = "password";
+const page_404 = "404";
+const page_505 = "505";
+
+const link = page => `?page=${page}`;
 
 export default {
-  [url_chat]: {
-    page: chat,
+  [page_chat]: {
+    tpl: chat,
     values: {
       profile: {
         label: "Профиль",
-        link: url_profile
+        link: link(page_profile)
       },
       icons: { attach, send, arrow }
     }
   },
-  [url_login]: {
-    page: login,
+  [page_login]: {
+    tpl: login,
     values: {
-      action: url_chat,
       header: "Вход",
       fields: [
         { label: "Логин", name: "login", type: "text" },
@@ -39,15 +39,15 @@ export default {
       ],
       footer: [
         { label: "Войти", type: "button" },
-        { label: "Регистрация", type: "link", link: url_register }
+        { label: "Регистрация", type: "link", link: link(page_register) },
+        { type: "page", link: page_chat }
       ]
     }
   },
-  [url_register]: {
-    page: login,
+  [page_register]: {
+    tpl: login,
     values: {
       header: "Регистрация",
-      action: url_chat,
       fields: [
         { label: "Почта", name: "email", type: "text" },
         { label: "Логин", name: "login", type: "text" },
@@ -62,18 +62,18 @@ export default {
           label: "Зарегистрироваться",
           type: "button"
         },
-        { label: "Войти", type: "link", link: url_login }
+        { label: "Войти", type: "link", link: link(page_login) },
+        { type: "page", link: page_chat }
       ]
     }
   },
-  [url_profile]: {
-    page: profile,
+  [page_profile]: {
+    tpl: profile,
     values: {
-      action: url_profile,
       icons: { arrow },
       back: {
         label: "Назад",
-        link: url_chat
+        link: link(page_chat)
       },
       editable: true,
       avatar: {
@@ -111,6 +111,7 @@ export default {
           type: "text",
           value: "user"
         },
+        { type: "page", value: page_profile },
         {
           label: "Телефон",
           name: "phone",
@@ -122,17 +123,17 @@ export default {
         {
           label: "Изменить данные",
           type: "link",
-          link: url_profileEdit
+          link: link(page_profile) + "&edit"
         },
         {
           label: "Изменить пароль",
           type: "link",
-          link: `/${url_password}?edit`
+          link: `/${link(page_password)}&edit`
         },
         {
           label: "Выйти",
           type: "link",
-          link: `/${url_login}`,
+          link: link(page_login),
           className: "danger"
         },
         {
@@ -143,14 +144,13 @@ export default {
       ]
     }
   },
-  [url_password]: {
-    page: profile,
+  [page_password]: {
+    tpl: profile,
     values: {
-      action: url_profile,
       icons: { arrow },
       back: {
         label: "Назад",
-        link: url_chat
+        link: link(page_chat)
       },
       avatar: {
         name: "avatar",
@@ -164,6 +164,7 @@ export default {
           type: "password",
           value: "Старый пароль"
         },
+        { type: "page", value: page_profile },
         {
           label: "Новый пароль",
           name: "newPassword",
@@ -181,16 +182,20 @@ export default {
           label: "Сохранить",
           type: "button",
           isEditMode: true
+        },
+        {
+          type: "page",
+          link: page_profile
         }
       ]
     }
   },
-  [url_404]: {
-    page: error,
+  [page_404]: {
+    tpl: error,
     values: { code: 404, message: "Страница не найдена" }
   },
-  [url_505]: {
-    page: error,
+  [page_505]: {
+    tpl: error,
     values: { code: 505, message: "Ошибка сервера" }
   }
 };

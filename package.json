@@ -5,7 +5,9 @@
   "source": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel build && node server.js"
+    "start": "parcel build && node server.js",
+    "wds": "rm -rf dist && parcel",
+    "build": "rm -rf dist && parcel build"
   },
   "keywords": [],
   "author": "Mikhal Khananov <mkhananov@gmail.com>",
