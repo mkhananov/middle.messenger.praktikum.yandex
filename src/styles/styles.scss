@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background: #E5E5E5;
+}
+
+button {
+  background: $main-color;
+  border-radius: 20px;
+  border: 0;
+  color: white;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 300ms;
+  width: 280px;
+  align-self: center;
+
+  &:hover {
+    opacity: .7;
+  }
+}
