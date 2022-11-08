@@ -2,7 +2,7 @@ import { Block } from "../../services/Block";
 import tpl from "./index.tpl";
 
 export default class ChatRoom extends Block {
-  constructor(props: Record<string, any>) {
+  constructor(props: Record<string, string | boolean | Function>) {
     super("div", props);
   }
 

@@ -4,13 +4,13 @@ import { checks } from "../../utils/checks";
 
 export default class Input extends Block {
   constructor(props: Record<string, any>) {
-    const { required = false, name } = props;
     super("div", {
       ...props,
       events: {
-        blur: e => {
+        blur: event => {
+          const { required = false, name } = props;
           if (required) {
-            const value: string = e.target.value.trim();
+            const value: string = event.target.value.trim();
             const error: string = checks(name)(value);
             this.setProps({ error, value });
           }

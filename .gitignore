@@ -1,0 +1,8 @@
+/.github/
+/.gitignore
+/node_modules/
+/.parcel-cache/
+/dist/
+/yarn-error.log
+/.idea/prettier.xml
+/.idea/workspace.xml

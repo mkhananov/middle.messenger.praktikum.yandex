@@ -2,7 +2,7 @@ import { Block } from "../../services/Block";
 import tpl from "./index.tpl";
 
 export default class Button extends Block {
-  constructor(props: Record<string, any>) {
+  constructor(props: Record<string, string | boolean | Function | unknown>) {
     const { onClick } = props;
     super("div", {
       ...props,

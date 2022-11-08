@@ -1,11 +1,11 @@
-const METHODS = {
-  GET: "GET",
-  POST: "POST",
-  PUT: "PUT",
-  DELETE: "DELETE"
-};
+enum METHODS {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE"
+}
 
-type requestProps = (
+type RequestProps = (
   url: string,
   options: {
     [key: string]: any;
@@ -21,7 +21,7 @@ function queryStringify(data: object) {
   );
 }
 class HTTPTransport {
-  get: requestProps = (url: string, options) => {
+  get: RequestProps = (url, options) => {
     const query = queryStringify(options.data);
     return this.request(
       url,
@@ -30,7 +30,7 @@ class HTTPTransport {
     );
   };
 
-  post: requestProps = (url, options) => {
+  post: RequestProps = (url, options) => {
     const query = queryStringify(options.data);
     return this.request(
       url,
@@ -39,7 +39,7 @@ class HTTPTransport {
     );
   };
 
-  put: requestProps = (url, options) => {
+  put: RequestProps = (url, options) => {
     const query = queryStringify(options.data);
     return this.request(
       url,
@@ -48,7 +48,7 @@ class HTTPTransport {
     );
   };
 
-  delete: requestProps = (url, options) => {
+  delete: RequestProps = (url, options) => {
     const query = queryStringify(options.data);
     return this.request(
       url,
