@@ -1,0 +1,61 @@
+.chat-room {
+  display: flex;
+  padding: 12px 10px;
+  gap: 10px;
+  transition: all 300ms ease-in-out;
+
+  &__avatar {
+    background-color: $grey-color;
+    width: 47px;
+    height: 47px;
+    border-radius: 25px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  &__title {
+    color: $black-font-color;
+    font-size: 12px;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  &__body {
+    color: $grey-font-color;
+    font-size: 11px;
+    margin: 0;
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__time {
+    color: $grey-font-color;
+    font-size: 9px;
+    margin: 0;
+  }
+
+  &__unread {
+    color: white;
+    font-size: 11px;
+    margin: 0;
+    background-color: $main-color;
+    padding: 4px 8px;
+    border-radius: 20px;
+  }
+
+  &:hover {
+    background-color: $bg-active-color;
+    cursor: pointer;
+  }
+
+}

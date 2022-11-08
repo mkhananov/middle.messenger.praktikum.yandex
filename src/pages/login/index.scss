@@ -36,44 +36,6 @@
     margin: 40px 0;
   }
 
-  .field {
-    display: flex;
-    flex-direction: column;
-
-
-    .label {
-      color: #999999;
-      font-size: 9px;
-      margin-bottom: 2px;
-      font-weight: 300;
-      transition: color 300ms;
-    }
-
-    input {
-      border: 0;
-      border-bottom: 1.5px solid $main-color;
-      opacity: .7;
-      padding: 5px 0;
-      font-size: 13px;
-      transition: opacity 300ms;
-      outline: none;
-
-    }
-
-    &:focus, &:hover {
-      input {
-        opacity: 1;
-      }
-
-      .label {
-        color: black;
-      }
-
-
-    }
-
-  }
-
   .footer {
     display: flex;
     flex-direction: column;

@@ -1,0 +1,16 @@
+.message {
+  font-size: 12px;
+  background: #F8F8F8;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  width: 40%;
+  margin: 10px 0;
+  flex-direction: column;
+
+  &__time {
+    align-self: flex-end;
+    font-size: 9px;
+    color: $grey-font-color;
+  }
+}

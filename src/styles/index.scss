@@ -1,10 +1,10 @@
 @import "variables";
 @import "styles";
-@import "../pages/chat/chat";
-@import "../pages/error/error";
-@import "../pages/login/login";
-@import "../pages/profile/profile";
-
-
-
-
+@import "../components/input";
+@import "../components/message";
+@import "../components/chatRoom";
+@import "../components/sendMessage";
+@import "../pages/blank";
+@import "../pages/chat";
+@import "../pages/login";
+@import "../pages/profile";
